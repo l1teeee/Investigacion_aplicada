@@ -50,8 +50,8 @@
       <td>Mendez</td>
       <td>56</td>
       <td>1056</td>
-      <td><button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-warning">Warning</button></td>
+      <td><button type="button" class="btn btn-secondary">Modificar</button>
+      <button type="button" class="btn btn-danger">Eliminar</button></td>
 
     </tr>
   	</tbody>
@@ -60,37 +60,71 @@
     
 
     <center><div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-success" id="showDialog">POST</button>
-    <button type="button" class="btn btn-success">GET</button>
-    <button type="button" class="btn btn-warning">PUT</button>
-    <button type="button" class="btn btn-warning">PATCH</button>
-    <button type="button" class="btn btn-danger">DELETE</button>
+    <button type="button" class="btn btn-success" id="showDialog">Subir dato</button>
     </div></center>
 
     <!-- A modal dialog containing a form -->
 <dialog id="favDialog">
-  <form class="agre">
-    <p>
-      <label>Favorite animal:
-        <select>
-          <option value="default">Choose…</option>
-          <option>Brine shrimp</option>
-          <option>Red panda</option>
-          <option>Spider monkey</option>
-        </select>
-      </label>
-    </p>
+  <form>
+  <div class="row mb-4">
+    <center>
+    <h1>SUBIR DATO</h1>
+
+    </center>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Nombre</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Apellido</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Edad</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Salario</label>
+  </div>
+
+  <div class="d-grid gap-2">
+  <button id="confirmBtn" value="default" class="btn btn-outline-success">Enviar</button>
+
+    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
+  </div>    
     <div>
-      <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
-      <button id="confirmBtn" value="default" class="btn btn-outline-success">Submit</button>
+      
     </div>
   </form>
 </dialog>
-<p>
-  <button id="showDialog" class="btn btn-outline-primary">Show the dialog</button>
-</p>
 <output></output>
-<script src="/resources/js/ventanas.js"></script>
+<script>
+    const showButton = document.getElementById('showDialog');
+const favDialog = document.getElementById('favDialog');
+const outputBox = document.querySelector('output');
+const selectEl = favDialog.querySelector('select');
+const confirmBtn = favDialog.querySelector('#confirmBtn');
+
+showButton.addEventListener('click', () => {
+    favDialog.showModal();
+});
+
+selectEl.addEventListener('change', (e) => {
+  confirmBtn.value = selectEl.value;
+});
+
+confirmBtn.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    favDialog.close();
+});
+</script>
 
 
 
