@@ -24,7 +24,7 @@
       <link rel="stylesheet" href="{{asset('css/app.css') }}">
       <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
       <title>Manager</title>
 
@@ -95,6 +95,7 @@
     <button type="button" class="btn btn-warning">PATCH</button>
     <button type="button" class="btn btn-danger">DELETE</button>
     </div></center>
+</div>
 
     <script>
         // seleccionar el botón "POST" por su identificador
