@@ -34,58 +34,29 @@
     <table class="table table-striped table-hover" >
   	<thead>
     <tr>
-      <th scope="col">
-        <div class="form-check">
-        </div>
-      </th>
       <th scope="col">ID</th>
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
       <th scope="col">Edad</th>
       <th scope="col">Salario</th>
+      <th scope="col">Operaciones</th>
+
     </tr>
   	</thead>
   	<tbody>
     <tr>
-      <th scope="row">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-        </div>
-      </th>
       <td>1</td>
       <td>Julián</td>
       <td>Mendez</td>
       <td>56</td>
       <td>1056</td>
-    </tr>
-    <tr>
-      <th scope="row">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-        </div>
-      </th>
-      <td>2</td>
-      <td>Pedro</td>
-      <td>Mendoza</td>
-      <td>32</td>
-      <td>800</td>
-    </tr>
-    <tr>
-      <th scope="row">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        </div>
-      </th>
-      <td>3</td>
-      <td>Augusto</td>
-      <td>Carmelo</td>
-      <td>21</td>
+      <td><button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-warning">Warning</button></td>
 
-      <td>348</td>
     </tr>
   	</tbody>
 	</table>
-        </div>
+    </div>
     
 
     <center><div class="btn-group" role="group" aria-label="Basic example">
@@ -97,59 +68,9 @@
     </div></center>
 </div>
 
-    <script>
-        // seleccionar el botón "POST" por su identificador
-const postBtn = document.getElementById("post-btn");
-
-// agregar un evento "click" al botón
-postBtn.addEventListener("click", function() {
-  // seleccionar el elemento donde se agregará el formulario
-  const formContainer = document.getElementById("form-container");
-
-  // crear el código HTML para el formulario
-  const formHtml = `
-    <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
-      <form>
-        <div class="row mb-4">
-          <center>
-            <h1>Subir dato</h1>
-          </center>
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" id="form6Example1" class="form-control" />
-              <label class="form-label" for="form6Example1">Nombre</label>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" id="form6Example2" class="form-control" />
-              <label class="form-label" for="form6Example2">Apellido</label>
-            </div>
-          </div>
-        </div>
-        <div class="form-outline mb-4">
-          <input type="number" id="form6Example6" class="form-control" />
-          <label class="form-label" for="form6Example6">Edad</label>
-        </div>
-
-        <div class="form-outline mb-4">
-          <input type="number" id="form6Example6" class="form-control" />
-          <label class="form-label" for="form6Example6">Salario</label>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block mb-4">Subir</button>
-      </form>
-    </div>
-  `;
-
-  // agregar el código HTML al elemento contenedor
-  formContainer.innerHTML = formHtml;
-});
-
-    </script>
 
 
-    <!-- <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
+  <!-- <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
   <form>
   <div class="row mb-4">
     <center>
