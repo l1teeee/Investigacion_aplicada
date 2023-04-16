@@ -89,15 +89,66 @@
     
 
     <center><div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-success">POST</button>
+    <button type="button" class="btn btn-success" id="post-btn">POST</button>
     <button type="button" class="btn btn-success">GET</button>
     <button type="button" class="btn btn-warning">PUT</button>
     <button type="button" class="btn btn-warning">PATCH</button>
     <button type="button" class="btn btn-danger">DELETE</button>
     </div></center>
 
+    <script>
+        // seleccionar el botón "POST" por su identificador
+const postBtn = document.getElementById("post-btn");
 
+// agregar un evento "click" al botón
+postBtn.addEventListener("click", function() {
+  // seleccionar el elemento donde se agregará el formulario
+  const formContainer = document.getElementById("form-container");
+
+  // crear el código HTML para el formulario
+  const formHtml = `
     <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
+      <form>
+        <div class="row mb-4">
+          <center>
+            <h1>Subir dato</h1>
+          </center>
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example1" class="form-control" />
+              <label class="form-label" for="form6Example1">Nombre</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example2" class="form-control" />
+              <label class="form-label" for="form6Example2">Apellido</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <input type="number" id="form6Example6" class="form-control" />
+          <label class="form-label" for="form6Example6">Edad</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="number" id="form6Example6" class="form-control" />
+          <label class="form-label" for="form6Example6">Salario</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block mb-4">Subir</button>
+      </form>
+    </div>
+  `;
+
+  // agregar el código HTML al elemento contenedor
+  formContainer.innerHTML = formHtml;
+});
+
+    </script>
+
+
+    <!-- <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
   <form>
   <div class="row mb-4">
     <center>
@@ -129,7 +180,7 @@
 
   <button type="submit" class="btn btn-primary btn-block mb-4">Subir</button>
   </form>
-  </div>
+  </div> -->
    
 
 
