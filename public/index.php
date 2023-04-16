@@ -20,6 +20,8 @@
       <th scope="col">Lorem</th>
       <th scope="col">Ipsum</th>
       <th scope="col">Dolor</th>
+      <th scope="col">Dolor</th>
+
     </tr>
   	</thead>
   	<tbody>
