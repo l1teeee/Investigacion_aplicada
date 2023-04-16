@@ -1,15 +1,17 @@
-
+<!-- 
 <!DOCTYPE html>
   <html>
     <head>
-      <link rel="stylesheet" src="../resources/css/app.css" type="text/css">
+      <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
+      <link rel="stylesheet" src="css/app.css" type="text/css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <title>Manager</title>
+
     </head>
-    <body style="">
-	<div class="tabla" >
-	<table class="table table-striped table-hover" >
+    <body>
+    <table class="table table-striped table-hover" >
   	<thead>
     <tr>
       <th scope="col">
@@ -63,7 +65,6 @@
     </tr>
   	</tbody>
 	</table>
-	</div>
 
   <div class="btn-group" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-success">POST</button>
@@ -74,7 +75,7 @@
   </div>
 
 
-  <form>
+   <form>
   <div class="row mb-4">
     <center>
     <h1>Subir dato</h1>
@@ -138,7 +139,9 @@
   </div>
 
   <button type="submit" class="btn btn-primary btn-block mb-4">Actualizar</button>
-  </form>
+  </form> 
+
+  
   
 
 
@@ -148,3 +151,4 @@
 </html>
 
 
+ -->
