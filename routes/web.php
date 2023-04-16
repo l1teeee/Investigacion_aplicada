@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pruebas', function (){
-    return view ('table');
+Route::get('/profile', function (){
+    return "Estas en el perfil";
 });
 
 Route::get('saludo', function(){
