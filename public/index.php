@@ -1,133 +1,113 @@
+
 <!DOCTYPE html>
   <html>
     <head>
-      <link rel="stylesheet" src="./resources/css/app.css">
-      <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <link rel="stylesheet" src="../resources/css/app.css" type="text/css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
     <body style="">
-    <nav class="navbar navbar-default navbar-static-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#">
-							ADMIN
-						</a>
-					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="http://www.sciax2.it/forum/utenti/-kik_226760/" target="_blank">Return back</a></li>
-							<li class="dropdown ">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-									Settings
-									<span class="caret"></span></a>
-									<ul class="dropdown-menu" role="menu">
-										<li class="dropdown-header">SETTINGS</li>
-										<li class=""><a href="#">Link</a></li>
-										<li class=""><a href="#">Other Link</a></li>
-										<li class=""><a href="#">Other Link</a></li>
-										<li class="divider"></li>
-										<li><a href="#">Logout</a></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-				<div class="container-fluid">
-					<div class="col col-md-3">			
-						<div class="panel-group" id="accordion">
-						  <div class="panel panel-default">
-							<div class="panel-heading">
-							  <h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-								Files</a>
-							  </h4>
-							</div>
-							<div id="collapse1" class="panel-collapse collapse in">
-								<ul class="list-group">
-									<li class="list-group-item"><span class="badge">253</span> New</li>
-									<li class="list-group-item"><span class="badge">17</span> Deleted</li>
-									<li class="list-group-item"><span class="badge">3</span> Reported</li>
-								</ul>
-							</div>
-						  </div>
-						  <div class="panel panel-default">
-							<div class="panel-heading">
-							  <h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-								Blog</a>
-							  </h4>
-							</div>
-							<div id="collapse2" class="panel-collapse collapse">
-								<ul class="list-group">
-									<li class="list-group-item"><span class="badge">12</span> New</li>
-									<li class="list-group-item"><span class="badge">5</span> Deleted</li>
-								</ul>
-							</div>
-						  </div>
-							<div class="panel panel-default">
-							<div class="panel-heading">
-							  <h4 class="panel-title">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-								Settings</a>
-							  </h4>
-							</div>
-							<div id="collapse3" class="panel-collapse collapse">
-								<ul class="list-group">
-									<li class="list-group-item"><span class="badge">1</span> Users Reported</li>
-									<li class="list-group-item"><span class="badge">5</span> User Waiting Activation</li>
-								</ul>
-							</div>
-						  </div>
-						</div> 
-					</div>
-					<div class="col col-md-9">
-						<div class="row">
-							<div class="col col-md-5">
-								<h4>Today Stats:</h4>
-										Visits<span class="pull-right strong">- 15%</span>
-										 <div class="progress">
-											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="15"aria-valuemin="0" aria-valuemax="100" style="width:15%">15%</div>
-										</div>
-									
-										20 New Users<span class="pull-right strong">+ 30%</span>
-										 <div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="30"aria-valuemin="0" aria-valuemax="100" style="width:30%">30%</div>
-										</div>
-									
-										359 Downloads<span class="pull-right strong">+ 8%</span>
-										 <div class="progress">
-											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="8"aria-valuemin="0" aria-valuemax="100" style="width:8%">8%</div>
-										</div>
-							</div>
-							<div class="col col-md-5">
-								<h4>This Month Stats:</h4>
-										Visits<span class="pull-right strong">+ 45%</span>
-										 <div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="45"aria-valuemin="0" aria-valuemax="100" style="width:45%">45%</div>
-										</div>
-									
-										395 New Users<span class="pull-right strong">+ 57%</span>
-										 <div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="57"aria-valuemin="0" aria-valuemax="100" style="width:57%">57%</div>
-										</div>
-									
-										12.593 Downloads<span class="pull-right strong">+ 25%</span>
-										 <div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25"aria-valuemin="0" aria-valuemax="100" style="width:25%">25%</div>
-										</div>
-							</div>
-						</div>
-					</div>
-				</div>
-    </body>
+	<div class="tabla" >
+	<table class="table table-striped table-hover" >
+  	<thead>
+    <tr>
+      <th scope="col">
+        <div class="form-check">
+        </div>
+      </th>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Salario</th>
+    </tr>
+  	</thead>
+  	<tbody>
+    <tr>
+      <th scope="row">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+        </div>
+      </th>
+      <td>1</td>
+      <td>Julián</td>
+      <td>Mendez</td>
+      <td>56</td>
+      <td>1056</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+        </div>
+      </th>
+      <td>2</td>
+      <td>Pedro</td>
+      <td>Mendoza</td>
+      <td>32</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+        </div>
+      </th>
+      <td>3</td>
+      <td>Augusto</td>
+      <td>Carmelo</td>
+      <td>21</td>
+
+      <td>348</td>
+    </tr>
+  	</tbody>
+	</table>
+	</div>
+
+  <div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-success">POST</button>
+  <button type="button" class="btn btn-success">GET</button>
+  <button type="button" class="btn btn-warning">PUT</button>
+  <button type="button" class="btn btn-warning">PATCH</button>
+  <button type="button" class="btn btn-danger">DELETE</button>
+  </div>
+
+
+  <form>
+  <div class="row mb-4">
+    <center>
+    <h1>Subir dato</h1>
+
+    </center>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Nombre</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Apellido</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Edad</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Salario</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block mb-4">Subir</button>
+  </form>
+
+
+  </body>
 </html>
 
 
