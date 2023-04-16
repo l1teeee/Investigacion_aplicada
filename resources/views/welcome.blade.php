@@ -29,8 +29,10 @@
       <title>Manager</title>
 
     </head>
-    <body>
+    <body style="background-color: #fff;">
+    <center>
     <div class="muestras">
+        <h1>Control de usuarios</h1>
     <table class="table table-striped table-hover" >
   	<thead>
     <tr>
@@ -38,7 +40,7 @@
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
       <th scope="col">Edad</th>
-      <th scope="col">Salario</th>
+      <th scope="col">Salario $</th>
       <th scope="col">Operaciones</th>
 
     </tr>
@@ -50,18 +52,21 @@
       <td>Mendez</td>
       <td>56</td>
       <td>1056</td>
-      <td><button type="button" class="btn btn-secondary">Modificar</button>
+      <td><button type="button" class="btn btn-secondary" id="showModifi">Modificar</button>
       <button type="button" class="btn btn-danger">Eliminar</button></td>
 
     </tr>
   	</tbody>
 	</table>
-    </div>
-    
-
     <center><div class="btn-group" role="group" aria-label="Basic example">
     <button type="button" class="btn btn-success" id="showDialog">Subir dato</button>
     </div></center>
+    </div>
+    
+
+    
+
+    
 
     <!-- A modal dialog containing a form -->
 <dialog id="favDialog">
@@ -104,23 +109,94 @@
     </div>
   </form>
 </dialog>
-<output></output>
+<!-- <output></output> -->
+
+
+    <!-- A modal dialog containing a form -->
+<dialog id="favModi">
+  <form>
+  <div class="row mb-4">
+    <center>
+    <h1>Modificar DATO</h1>
+
+    </center>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Nombre</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Apellido</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Edad</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Salario</label>
+  </div>
+
+  <div class="d-grid gap-2">
+  <button id="confirmBtn1" value="default" class="btn btn-info">Modificar</button>
+
+    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
+  </div>    
+    <div>
+      
+    </div>
+  </form>
+</dialog>
+<!-- <output></output> -->
+</center>
+
+
+
+
 <script>
-    const showButton = document.getElementById('showDialog');
+const showButton = document.getElementById('showDialog');
+const showButton1 = document.getElementById('showModifi');
+
 const favDialog = document.getElementById('favDialog');
+const favModi = document.getElementById('favModi');
+
 const outputBox = document.querySelector('output');
 const selectEl = favDialog.querySelector('select');
+const selectEl1 = favModi.querySelector('select');
+
 const confirmBtn = favDialog.querySelector('#confirmBtn');
+const confirmBtn1 = favModi.querySelector('#confirmBtn1');
+
 
 showButton.addEventListener('click', () => {
     favDialog.showModal();
 });
 
+showButton1.addEventListener('click', () => {
+    favModi.showModal();
+});
+
+
 selectEl.addEventListener('change', (e) => {
   confirmBtn.value = selectEl.value;
 });
 
+selectEl1.addEventListener('change', (e) => {
+  confirmBtn1.value = selectEl.value;
+});
+
 confirmBtn.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    favDialog.close();
+});
+
+confirmBtn1.addEventListener('click', (event) => {
     event.preventDefault(); 
     favDialog.close();
 });

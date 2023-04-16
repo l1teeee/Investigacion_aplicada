@@ -2,15 +2,18 @@ h1{
     color: rgb(175, 13, 13);
 }
 
-
+body{
+    
+}
 
 
 .muestras{
     padding: 1vw;
-    margin: 2vw;
-    background: rgba( 155, 155, 155, 0.35 );
-backdrop-filter: blur( 1.5px );
--webkit-backdrop-filter: blur( 1.5px );
+    margin: 18vw 3vw 1vw 3vw;
+    background: rgba( 254, 250, 224, 0.7 );
+box-shadow: 0 8px 32px 0 rgba(44, 46, 73, 0.37);
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
@@ -27,7 +30,7 @@ margin: 3vw 3vw 5vw 3vw;
 }
 
 
-#favDialog{
+#favDialog,#favModi{
     background: rgba( 255, 255, 255, 0.8 );
 box-shadow: 0 8px 32px 0 rgba(155, 158, 194, 0.637);
 backdrop-filter: blur( 4px );
