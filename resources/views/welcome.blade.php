@@ -95,16 +95,9 @@
     <button type="button" class="btn btn-warning">PATCH</button>
     <button type="button" class="btn btn-danger">DELETE</button>
     </div></center>
-  
-    <script>
-        // Obtener los botones y el contenedor de formularios
-    const postBtn = document.querySelector(".btn-success:first-of-type");
-    const putBtn = document.querySelector(".btn-warning:first-of-type");
-    const formContainer = document.querySelector("#subir");
 
 
-
- <!--  <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
+    <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
   <form>
   <div class="row mb-4">
     <center>
@@ -220,8 +213,6 @@
   </form> 
 
   </div>
-   -->
-
   
   
 
