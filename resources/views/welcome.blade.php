@@ -90,6 +90,7 @@
   <button id="showDialog" class="btn btn-outline-primary">Show the dialog</button>
 </p>
 <output></output>
+<script src="/resources/js/ventanas.js"></script>
 
 
 
@@ -217,7 +218,6 @@
 
 
 
-  <script src="../js/ventanas.js"></script>
 
   </body>
 </html>
