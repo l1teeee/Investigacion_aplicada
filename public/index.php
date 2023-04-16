@@ -104,7 +104,42 @@
   </div>
 
   <button type="submit" class="btn btn-primary btn-block mb-4">Subir</button>
-</form>
+  </form>
+
+
+
+  <form>
+  <div class="row mb-4">
+    <center>
+    <h1>Actualizar datos</h1>
+
+    </center>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Nombre</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Apellido</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Edad</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Salario</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block mb-4">Actualizar</button>
+  </form>
+  
 
 
 
