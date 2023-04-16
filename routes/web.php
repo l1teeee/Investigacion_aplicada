@@ -14,13 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Manager');
 });
 
-Route::get('/profile', function (){
-    return "Estas en el perfil";
+
+Route::get('/profile', function () {
+    return view('profile');
 });
 
-Route::get('saludo', function(){
-    return view('saludo');
-});
