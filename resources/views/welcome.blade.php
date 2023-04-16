@@ -60,17 +60,43 @@
     
 
     <center><div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-success" id="post-btn">POST</button>
+    <button type="button" class="btn btn-success" id="showDialog">POST</button>
     <button type="button" class="btn btn-success">GET</button>
     <button type="button" class="btn btn-warning">PUT</button>
     <button type="button" class="btn btn-warning">PATCH</button>
     <button type="button" class="btn btn-danger">DELETE</button>
     </div></center>
-</div>
+
+    <!-- A modal dialog containing a form -->
+<dialog id="favDialog">
+  <form class="agre">
+    <p>
+      <label>Favorite animal:
+        <select>
+          <option value="default">Choose…</option>
+          <option>Brine shrimp</option>
+          <option>Red panda</option>
+          <option>Spider monkey</option>
+        </select>
+      </label>
+    </p>
+    <div>
+      <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
+      <button id="confirmBtn" value="default" class="btn btn-outline-success">Submit</button>
+    </div>
+  </form>
+</dialog>
+<p>
+  <button id="showDialog" class="btn btn-outline-primary">Show the dialog</button>
+</p>
+<output></output>
 
 
 
-  <!-- <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
+
+
+
+<!-- <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
   <form>
   <div class="row mb-4">
     <center>
@@ -105,7 +131,7 @@
   </div> -->
    
 
-
+<!-- 
 
   <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="actu">
   <form>
@@ -185,12 +211,13 @@
   <button type="submit" class="btn btn-primary btn-block mb-4">Actualizar</button>
   </form> 
 
-  </div>
+  </div> -->
   
   
 
 
 
+  <script src="../js/ventanas.js"></script>
 
   </body>
 </html>
