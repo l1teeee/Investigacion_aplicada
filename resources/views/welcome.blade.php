@@ -98,44 +98,10 @@
   
     <script>
         // Obtener los botones y el contenedor de formularios
-const postBtn = document.querySelector(".btn-success:first-of-type");
-const putBtn = document.querySelector(".btn-warning:first-of-type");
-const formContainer = document.querySelector("#subir");
+    const postBtn = document.querySelector(".btn-success:first-of-type");
+    const putBtn = document.querySelector(".btn-warning:first-of-type");
+    const formContainer = document.querySelector("#subir");
 
-// Agregar eventos de click a los botones
-postBtn.addEventListener("click", () => { formContainer.innerHTML = 
-    `<div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
-      <form>
-        <div class="row mb-4">
-          <center>
-            <h1>Subir dato</h1>
-          </center>
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" id="form6Example1" class="form-control" />
-              <label class="form-label" for="form6Example1">Nombre</label>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" id="form6Example2" class="form-control" />
-              <label class="form-label" for="form6Example2">Apellido</label>
-            </div>
-          </div>
-        </div>
-        <div class="form-outline mb-4">
-          <input type="number" id="form6Example6" class="form-control" />
-          <label class="form-label" for="form6Example6">Edad</label>
-        </div>
-        <div class="form-outline mb-4">
-          <input type="number" id="form6Example6" class="form-control" />
-          <label class="form-label" for="form6Example6">Salario</label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block mb-4">Subir</button>
-      </form>
-    </div>`;
-});
-    </script>
 
 
  <!--  <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
@@ -175,7 +141,7 @@ postBtn.addEventListener("click", () => { formContainer.innerHTML =
 
 
 
-  <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
+  <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="actu">
   <form>
   <div class="row mb-4">
     <center>
@@ -211,7 +177,7 @@ postBtn.addEventListener("click", () => { formContainer.innerHTML =
   </div>
   
 
-  <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="subir">
+  <div class="bg-success p-2" style="--bs-bg-opacity: .5;" id="actuindi">
   <form>
   <div class="row mb-4">
 
