@@ -5,12 +5,17 @@
       <link rel="stylesheet" href="{{asset('css/app.css') }}">
       <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      
       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-      <title>Manager</title>
+      <title>Control de usuarios</title>
 
     </head>
     <body style="background-color: #fff;">
+    <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="#">Investigación Aplicada</a>
+    <a class="navbar-brand" href="#">DSS</a>
+  </div>
+    </nav>
     <center>
     <div class="muestras">
         <h1>Control de usuarios</h1>
@@ -23,7 +28,6 @@
       <th scope="col">Edad</th>
       <th scope="col">Salario $</th>
       <th scope="col">Operaciones</th>
-
     </tr>
   	</thead>
   	<tbody>
@@ -44,11 +48,10 @@
         </td>
     </tr>
     @endforeach
-
-
   	</tbody>
 	</table>
 
+  <BR><BR>
     <form action="{{url('/persona')}}" method="POST">
       @csrf
       <div class="row mb-4" >
@@ -83,39 +86,21 @@
         </div>
       </center>
     </form>
-  
-<!-- <output></output> -->
 </center>
 
 
-
-
-<!-- A modal dialog containing a form -->
 <dialog id="favEliminar">
   <form>
   <div class="row mb-4">
-    <center>
-    <h1>Modificar DATO</h1>
-
-    </center>
-    <center>    <h5>Estas seguro que quieres eliminar este dato?</h1>
-    <br>
-</center>
-
-  <div class="d-grid gap-2">
-  <button id="confirmBtn2" value="default" class="btn btn-outline-success">Eliminar</button>
-
-    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
-  </div>    
-    <div>
-      
-    </div>
+    <center><h1>Modificar DATO</h1></center>
+    <center><h5>Estas seguro que quieres eliminar este dato?</h1><br></center>
+    <div class="d-grid gap-2">
+      <button id="confirmBtn2" value="default" class="btn btn-outline-success">Eliminar</button>
+      <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
+    </div>    
   </form>
 </dialog>
-<!-- <output></output> -->
 </center>
-
-
 
 
 <script>
@@ -123,23 +108,18 @@ const showButton = document.getElementById('showDialog');
 const showButton1 = document.getElementById('showModifi');
 const showButton2 = document.getElementById('showElimi');
 
-
 const favDialog = document.getElementById('favDialog');
 const favModi = document.getElementById('favModi');
 const favEliminar = document.getElementById('favEliminar');
-
 
 const outputBox = document.querySelector('output');
 const selectEl = favDialog.querySelector('select');
 const selectEl1 = favModi.querySelector('select');
 const selectEl2 = favEliminar.querySelector('select');
 
-
 const confirmBtn = favDialog.querySelector('#confirmBtn');
 const confirmBtn1 = favModi.querySelector('#confirmBtn1');
 const confirmBtn2 = favEliminar.querySelector('#confirmBtn2');
-
-
 
 showButton.addEventListener('click', () => {
     favDialog.showModal();
@@ -182,12 +162,6 @@ confirmBtn2.addEventListener('click', (event) => {
     favDialog.close();
 });
 </script>
-
-
-  
-  
-
-
 
   </body>
 </html>
