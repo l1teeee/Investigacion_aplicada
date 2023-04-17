@@ -43,64 +43,42 @@
 
   	</tbody>
 	</table>
-    <center><div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-success" id="showDialog">Subir dato</button>
-    </div></center>
-    </div>
+
+    <form action="{{url('/persona')}}" method="POST">
+      @csrf
+      <div class="row mb-4" >
+        <center>
+        <h1>Agregar nueva Personas</h1>
+        </center>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example1">Nombre</label>
+              <input type="text" id="form6Example1" class="form-control" name="nombres"/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">Apellido</label>
+              <input type="text" id="form6Example2" class="form-control" name="apellidos"/>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6 ">Edad</label>
+          <input type="number" id="form6Example6" class="form-control-sm" name="edad"/>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">Salario</label>
+          <input type="number" id="form6Example6" class="form-control-sm" name="salario"/>
+        </div>
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <input class="btn btn-success" type="submit" name="Enviar">
+        </div>
+      </center>
+    </form>
   
-    
-
-
-
-
-
-
-
-
-
-
-
-    <!-- A modal dialog containing a form -->
-<dialog id="favModi">
-  <form>
-  <div class="row mb-4">
-    <center>
-    <h1>Modificar DATO</h1>
-
-    </center>
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form6Example1" class="form-control" />
-        <label class="form-label" for="form6Example1">Nombre</label>
-      </div>
-    </div>
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
-        <label class="form-label" for="form6Example2">Apellido</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-outline mb-4">
-    <input type="number" id="form6Example6" class="form-control" />
-    <label class="form-label" for="form6Example6">Edad</label>
-  </div>
-
-  <div class="form-outline mb-4">
-    <input type="number" id="form6Example6" class="form-control" />
-    <label class="form-label" for="form6Example6">Salario</label>
-  </div>
-
-  <div class="d-grid gap-2">
-  <button id="confirmBtn1" value="default" class="btn btn-outline-success">Modificar</button>
-
-    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
-  </div>    
-    <div>
-      
-    </div>
-  </form>
-</dialog>
 <!-- <output></output> -->
 </center>
 
