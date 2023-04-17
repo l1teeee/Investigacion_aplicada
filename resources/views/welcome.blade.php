@@ -29,8 +29,10 @@
       <title>Manager</title>
 
     </head>
-    <body>
+    <body style="background-color: #fff;">
+    <center>
     <div class="muestras">
+        <h1>Control de usuarios</h1>
     <table class="table table-striped table-hover" >
   	<thead>
     <tr>
@@ -38,7 +40,7 @@
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
       <th scope="col">Edad</th>
-      <th scope="col">Salario</th>
+      <th scope="col">Salario $</th>
       <th scope="col">Operaciones</th>
 
     </tr>
@@ -50,46 +52,205 @@
       <td>Mendez</td>
       <td>56</td>
       <td>1056</td>
-      <td><button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-warning">Warning</button></td>
+      <td><button type="button" class="btn btn-secondary" id="showModifi">Modificar</button>
+      <button type="button" class="btn btn-danger"  id="showElimi">Eliminar</button></td>
 
     </tr>
   	</tbody>
 	</table>
+    <center><div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-success" id="showDialog">Subir dato</button>
+    </div></center>
     </div>
     
 
-    <center><div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-success" id="showDialog">POST</button>
-    <button type="button" class="btn btn-success">GET</button>
-    <button type="button" class="btn btn-warning">PUT</button>
-    <button type="button" class="btn btn-warning">PATCH</button>
-    <button type="button" class="btn btn-danger">DELETE</button>
-    </div></center>
+    
+
+    
 
     <!-- A modal dialog containing a form -->
 <dialog id="favDialog">
-  <form class="agre">
-    <p>
-      <label>Favorite animal:
-        <select>
-          <option value="default">Choose…</option>
-          <option>Brine shrimp</option>
-          <option>Red panda</option>
-          <option>Spider monkey</option>
-        </select>
-      </label>
-    </p>
+  <form>
+  <div class="row mb-4">
+    <center>
+    <h1>SUBIR DATO</h1>
+
+    </center>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Nombre</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Apellido</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Edad</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Salario</label>
+  </div>
+
+  <div class="d-grid gap-2">
+  <button id="confirmBtn" value="default" class="btn btn-outline-success">Enviar</button>
+
+    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
+  </div>    
     <div>
-      <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
-      <button id="confirmBtn" value="default" class="btn btn-outline-success">Submit</button>
+      
     </div>
   </form>
 </dialog>
-<p>
-  <button id="showDialog" class="btn btn-outline-primary">Show the dialog</button>
-</p>
-<output></output>
+<!-- <output></output> -->
+
+
+    <!-- A modal dialog containing a form -->
+<dialog id="favModi">
+  <form>
+  <div class="row mb-4">
+    <center>
+    <h1>Modificar DATO</h1>
+
+    </center>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example1" class="form-control" />
+        <label class="form-label" for="form6Example1">Nombre</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form6Example2" class="form-control" />
+        <label class="form-label" for="form6Example2">Apellido</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Edad</label>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type="number" id="form6Example6" class="form-control" />
+    <label class="form-label" for="form6Example6">Salario</label>
+  </div>
+
+  <div class="d-grid gap-2">
+  <button id="confirmBtn1" value="default" class="btn btn-outline-success">Modificar</button>
+
+    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
+  </div>    
+    <div>
+      
+    </div>
+  </form>
+</dialog>
+<!-- <output></output> -->
+</center>
+
+
+
+
+<!-- A modal dialog containing a form -->
+<dialog id="favEliminar">
+  <form>
+  <div class="row mb-4">
+    <center>
+    <h1>Modificar DATO</h1>
+
+    </center>
+    <center>    <h5>Estas seguro que quieres eliminar este dato?</h1>
+    <br>
+</center>
+
+  <div class="d-grid gap-2">
+  <button id="confirmBtn2" value="default" class="btn btn-outline-success">Eliminar</button>
+
+    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
+  </div>    
+    <div>
+      
+    </div>
+  </form>
+</dialog>
+<!-- <output></output> -->
+</center>
+
+
+
+
+<script>
+const showButton = document.getElementById('showDialog');
+const showButton1 = document.getElementById('showModifi');
+const showButton2 = document.getElementById('showElimi');
+
+
+const favDialog = document.getElementById('favDialog');
+const favModi = document.getElementById('favModi');
+const favEliminar = document.getElementById('favEliminar');
+
+
+const outputBox = document.querySelector('output');
+const selectEl = favDialog.querySelector('select');
+const selectEl1 = favModi.querySelector('select');
+const selectEl2 = favEliminar.querySelector('select');
+
+
+const confirmBtn = favDialog.querySelector('#confirmBtn');
+const confirmBtn1 = favModi.querySelector('#confirmBtn1');
+const confirmBtn2 = favEliminar.querySelector('#confirmBtn2');
+
+
+
+showButton.addEventListener('click', () => {
+    favDialog.showModal();
+});
+
+showButton1.addEventListener('click', () => {
+    favModi.showModal();
+});
+
+showButton2.addEventListener('click', () => {
+    favEliminar.showModal();
+});
+
+
+selectEl.addEventListener('change', (e) => {
+  confirmBtn.value = selectEl.value;
+});
+
+selectEl1.addEventListener('change', (e) => {
+  confirmBtn1.value = selectEl.value;
+});
+
+selectEl2.addEventListener('change', (e) => {
+  confirmBtn2.value = selectEl.value;
+});
+
+
+confirmBtn.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    favDialog.close();
+});
+
+confirmBtn1.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    favDialog.close();
+});
+
+confirmBtn2.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    favDialog.close();
+});
+</script>
 
 
 
@@ -217,7 +378,6 @@
 
 
 
-  <script src="../js/ventanas.js"></script>
 
   </body>
 </html>
