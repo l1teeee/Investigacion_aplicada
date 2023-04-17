@@ -16,7 +16,7 @@ class PersonaController extends Controller
     {
         //
         $personas = persona::all();
-        return $personas;
+        return view('welcome', ['personas' => $personas]);
     }
 
     /**
