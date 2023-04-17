@@ -380,8 +380,6 @@ confirmBtn2.addEventListener('click', (event) => {
 
 
 
-  
-
   </body>
 </html>
 

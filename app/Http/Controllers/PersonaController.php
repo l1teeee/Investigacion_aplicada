@@ -79,7 +79,7 @@ class PersonaController extends Controller
     public function update(Request $request)
     {
         //ACTUALIZAR DATOS
-        $persona = persona::findOrFail($request->id);
+        $personas = persona::findOrFail($request->id);
         $personas->nombres = $request->nombres;
         $personas->apellidos = $request->apellidos;
         $personas->edad = $request->edad;
