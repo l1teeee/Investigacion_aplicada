@@ -210,7 +210,11 @@ function abrirDialogo() {
 }
 </script>
 
-
+<script>
+  function cerrarDialogo() {
+  document.getElementById('favDialog').close();
+}
+</script>
 
 
 
