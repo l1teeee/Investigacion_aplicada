@@ -208,8 +208,10 @@ function abrirDialogo() {
   // Abre el cuadro de diálogo
   dialog.showModal();
 }
+</script>
 
-function cerrarDialogo() {
+<script>
+  function cerrarDialogo() {
   document.getElementById('favDialog').close();
 }
 </script>
