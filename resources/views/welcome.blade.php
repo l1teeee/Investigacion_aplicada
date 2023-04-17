@@ -36,10 +36,15 @@
         <td>{{ $persona->salario }}</td>
         <td>
             <button type="button" class="btn btn-secondary" id="showModifi_{{ $persona->id }}">Modificar</button>
-            <button type="button" class="btn btn-danger" id="showElimi_{{ $persona->id }}" data-persona-id="{{ $persona->id }}">Eliminar</button>
+            <form action="{{ route('personas.destroy', $persona->id) }}" method="POST" class="d-inline-block">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro que deseas eliminar este registro?')">Eliminar</button>
+            </form>
         </td>
     </tr>
     @endforeach
+
 
   	</tbody>
 	</table>

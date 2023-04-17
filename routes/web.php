@@ -34,6 +34,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', [App\Http\Controllers\PersonaController::class, 'persona']);
 
+Route::delete('/personas/{id}', [App\Http\Controllers\PersonaController::class, 'destroy'])->name('personas.destroy');
+
 Route::resource('persona', PersonaController::class);
 
 

@@ -102,17 +102,10 @@ class PersonaController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request)
+     //PARA ELIMINAR
+    public function destroy($id)
     {
-        //ELIMINAR REGISTROS
-
-        $personas = persona::destroy($request->id);
-        return $personas;
+    Persona::destroy($id);
+    return redirect('/')->with('success', 'Persona eliminada exitosamente');
     }
 }
