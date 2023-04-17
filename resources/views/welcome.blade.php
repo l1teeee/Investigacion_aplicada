@@ -39,7 +39,8 @@
         <td>{{ $persona->edad }} años</td>
         <td>${{ $persona->salario }}</td>
         <td>
-            <button type="button" class="btn btn-secondary" id="showModifi_{{ $persona->id }}">Modificar</button>
+        <button type="button" class="btn btn-primary" onclick="abrirDialogo()">Modificar</button>
+
             <form action="{{ route('personas.destroy', $persona->id) }}" method="POST" class="d-inline-block">
               @csrf
               @method('DELETE')
@@ -88,6 +89,38 @@
     </form>
 </center>
 
+<dialog id="favDialog">
+  <form action="{{ route('personas.update', $persona->id) }}" method="POST">
+    @csrf
+    @method('PUT')
+    <div class="row mb-4">
+      <center><h1>Modificar datos de la persona</h1></center>
+      <div class="col">
+        <div class="form-outline">
+          <label class="form-label" for="form6Example1">Nombre</label>
+          <input type="text" id="form6Example1" class="form-control" name="nombres" value="{{ $persona->nombres }}" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label class="form-label" for="form6Example2">Apellido</label>
+          <input type="text" id="form6Example2" class="form-control" name="apellidos" value="{{ $persona->apellidos }}" />
+        </div>
+      </div>
+    </div>
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example6">Edad</label>
+      <input type="number" id="form6Example6" class="form-control-sm" name="edad" value="{{ $persona->edad }}" />
+    </div>
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example6">Salario</label>
+      <input type="number" id="form6Example6" class="form-control-sm" name="salario" value="{{ $persona->salario }}" />
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <input class="btn btn-success" type="submit" name="Enviar">
+    </div>
+  </form>
+</dialog>
 
 <dialog id="favEliminar">
   <form>
@@ -162,6 +195,25 @@ confirmBtn2.addEventListener('click', (event) => {
     favDialog.close();
 });
 </script>
+
+
+
+<script>
+function abrirDialogo() {
+  // Obtiene el elemento del cuadro de diálogo
+  var dialog = document.getElementById('favDialog');
+  
+  // Abre el cuadro de diálogo
+  dialog.showModal();
+}
+</script>
+
+
+
+
+
+
+
 
   </body>
 </html>

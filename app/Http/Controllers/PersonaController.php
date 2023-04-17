@@ -87,20 +87,7 @@ class PersonaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
-    {
-        //ACTUALIZAR DATOS
-        $personas = persona::findOrFail($request->id);
-        $personas->nombres = $request->nombres;
-        $personas->apellidos = $request->apellidos;
-        $personas->edad = $request->edad;
-        $personas->salario = $request->salario;
-
-        $personas->save();
-
-        return $personas;
-
-    }
+    
 
      //PARA ELIMINAR
     public function destroy($id)
@@ -108,4 +95,21 @@ class PersonaController extends Controller
     Persona::destroy($id);
     return redirect('/')->with('success', 'Persona eliminada exitosamente');
     }
+
+    //PARA ACTUALIZAR
+    public function update(Request $request, $id)
+    {
+    $persona = Persona::findOrFail($id);
+
+    $persona->nombres = $request->input('nombres');
+    $persona->apellidos = $request->input('apellidos');
+    $persona->edad = $request->input('edad');
+    $persona->salario = $request->input('salario');
+
+    $persona->save();
+
+    return redirect()->back()->with('success', 'Los datos de la persona han sido actualizados correctamente');
+    }
+
+
 }
