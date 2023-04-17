@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
   <html>
     <head>
@@ -39,7 +38,7 @@
         <td>{{ $persona->edad }} años</td>
         <td>${{ $persona->salario }}</td>
         <td>
-        <button type="button" class="btn btn-warning" onclick="abrirDialogo()">Modificar</button>
+        <button type="button" class="btn btn-primary" onclick="abrirDialogo()">Modificar</button>
 
             <form action="{{ route('personas.destroy', $persona->id) }}" method="POST" class="d-inline-block">
               @csrf
@@ -50,10 +49,13 @@
     </tr>
     @endforeach
   	</tbody>
+    
 	</table>
+  <button type="button" class="btn btn-success" onclick="abrirAgregar()">Agregar Usuario</button>
 
   <BR><BR>
-    <form action="{{url('/persona')}}" method="POST">
+  <dialog id="agreDialog">
+  <form action="{{url('/persona')}}" method="POST">
       @csrf
       <div class="row mb-4" >
         <center>
@@ -62,24 +64,25 @@
           <div class="col">
             <div class="form-outline">
               <label class="form-label" for="form6Example1">Nombre</label>
-              <input type="text" id="form6Example1" class="form-control" name="nombres"/>
+              <input type="text" id="form6Example1" class="form-control" name="nombres" placeholder="Digite su Nombre" required/>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
               <label class="form-label" for="form6Example2">Apellido</label>
-              <input type="text" id="form6Example2" class="form-control" name="apellidos"/>
+              <input type="text" id="form6Example2" class="form-control" name="apellidos" placeholder="Digite su Apellido" required/>
             </div>
           </div>
         </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form6Example6 ">Edad</label>
-          <input type="number" id="form6Example6" class="form-control-sm" name="edad"/>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Edad</span>
+            <input type="number" class="form-control" id="form6Example6" name="edad" placeholder="Digite su edad" min="15" max="100" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form6Example6">Salario</label>
-          <input type="number" id="form6Example6" class="form-control-sm" name="salario"/>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Salario</span>
+            <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario"  min="350" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
         <div class="btn-group" role="group" aria-label="Basic example">
@@ -87,10 +90,11 @@
         </div>
       </center>
     </form>
+  </dialog>
 </center>
 
 <dialog id="favDialog">
-  <form action="{{ route('personas.update', $persona->id) }}" method="POST">
+  <form action="{{ route('personas.update', $persona->id) }}" method="POST" >
     @csrf
     @method('PUT')
     <div class="row mb-4">
@@ -108,21 +112,38 @@
         </div>
       </div>
     </div>
-    <div class="form-outline mb-4">
+
+
+<!--     <div class="form-outline mb-4">
       <label class="form-label" for="form6Example6">Edad</label>
-      <input type="number" id="form6Example6" class="form-control-sm" name="edad" value="{{ $persona->edad }}" />
+      <input type="number" id="form6Example6" class="form-control-sm" name="edad" min="1" max="100" value="{{ $persona->edad }}" />
     </div>
     <div class="form-outline mb-4">
       <label class="form-label" for="form6Example6">Salario</label>
-      <input type="number" id="form6Example6" class="form-control-sm" name="salario" value="{{ $persona->salario }}" />
+      <input type="number" id="form6Example6" class="form-control-sm" min="350" name="salario" value="{{ $persona->salario }}" />
+    </div> -->
+
+
+
+
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Edad</span>
+      <input type="number" class="form-control" id="form6Example6" name="edad" placeholder="Digite su edad" min="15" max="100" aria-label="Username" aria-describedby="basic-addon1" value="{{ $persona->edad }}">
     </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Salario</span>
+      <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario"  min="350" aria-label="Username" aria-describedby="basic-addon1" value="{{ $persona->salario }}" >
+    </div>
+
+
     <div class="btn-group" role="group" aria-label="Basic example">
-      <input class="btn btn-success" type="submit" name="Enviar">
-      <a></a>
-      <button type="button" class="btn btn-danger" onclick="cerrarDialogo()">Cancelar</button>
+      <input class="btn btn-success" type="submit" name="Modificar">
     </div>
   </form>
 </dialog>
+
 
 <dialog id="favEliminar">
   <form>
@@ -138,64 +159,6 @@
 </center>
 
 
-<script>
-const showButton = document.getElementById('showDialog');
-const showButton1 = document.getElementById('showModifi');
-const showButton2 = document.getElementById('showElimi');
-
-const favDialog = document.getElementById('favDialog');
-const favModi = document.getElementById('favModi');
-const favEliminar = document.getElementById('favEliminar');
-
-const outputBox = document.querySelector('output');
-const selectEl = favDialog.querySelector('select');
-const selectEl1 = favModi.querySelector('select');
-const selectEl2 = favEliminar.querySelector('select');
-
-const confirmBtn = favDialog.querySelector('#confirmBtn');
-const confirmBtn1 = favModi.querySelector('#confirmBtn1');
-const confirmBtn2 = favEliminar.querySelector('#confirmBtn2');
-
-showButton.addEventListener('click', () => {
-    favDialog.showModal();
-});
-
-showButton1.addEventListener('click', () => {
-    favModi.showModal();
-});
-
-showButton2.addEventListener('click', () => {
-    favEliminar.showModal();
-});
-
-
-selectEl.addEventListener('change', (e) => {
-  confirmBtn.value = selectEl.value;
-});
-
-selectEl1.addEventListener('change', (e) => {
-  confirmBtn1.value = selectEl.value;
-});
-
-selectEl2.addEventListener('change', (e) => {
-  confirmBtn2.value = selectEl.value;
-});
-
-
-confirmBtn.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    favDialog.close();
-});
-
-confirmBtn1.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    favDialog.close();
-});
-
-confirmBtn2.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    favDialog.close();
-});
 </script>
 
 
@@ -208,11 +171,9 @@ function abrirDialogo() {
   // Abre el cuadro de diálogo
   dialog.showModal();
 }
-</script>
-
-<script>
-  function cerrarDialogo() {
-  document.getElementById('favDialog').close();
+function abrirAgregar(){
+  var agregar = document.getElementById('agreDialog');
+  agregar.showModal();
 }
 </script>
 
@@ -225,6 +186,3 @@ function abrirDialogo() {
 
   </body>
 </html>
-
-
- 
