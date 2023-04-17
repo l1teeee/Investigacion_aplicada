@@ -39,7 +39,7 @@
         <td>{{ $persona->edad }} años</td>
         <td>${{ $persona->salario }}</td>
         <td>
-        <button type="button" class="btn btn-primary" onclick="abrirDialogo()">Modificar</button>
+        <button type="button" class="btn btn-warning" onclick="abrirDialogo()">Modificar</button>
 
             <form action="{{ route('personas.destroy', $persona->id) }}" method="POST" class="d-inline-block">
               @csrf
