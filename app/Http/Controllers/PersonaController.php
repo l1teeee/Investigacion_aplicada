@@ -16,7 +16,9 @@ class PersonaController extends Controller
     {
         //
         $personas = persona::all();
-        return view('welcome', ['personas' => $personas]);
+        return $personas;
+        // return view('welcome', ['personas' => $personas]);
+
     }
 
     /**
@@ -79,7 +81,7 @@ class PersonaController extends Controller
     public function update(Request $request)
     {
         //ACTUALIZAR DATOS
-        $personas = persona::findOrFail($request->id);
+        $persona = persona::findOrFail($request->id);
         $personas->nombres = $request->nombres;
         $personas->apellidos = $request->apellidos;
         $personas->edad = $request->edad;
