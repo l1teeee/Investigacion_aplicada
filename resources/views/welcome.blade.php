@@ -26,7 +26,7 @@
       <th scope="col">Nombre</th>
       <th scope="col">Apellido</th>
       <th scope="col">Edad</th>
-      <th scope="col">Salario $</th>
+      <th scope="col">Salario</th>
       <th scope="col">Operaciones</th>
     </tr>
   	</thead>
