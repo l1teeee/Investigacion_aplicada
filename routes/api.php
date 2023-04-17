@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/personas', 'App\Http\Controllers\PersonaController@index');//MOSTRAR REGISTROS
+Route::post('/personas', 'App\Http\Controllers\PersonaController@store');//CREAR REGISTROS
+Route::put('/personas/{id}', 'App\Http\Controllers\PersonaController@update');
+Route::delete('/personas/{id}', 'App\Http\Controllers\PersonaController@destroy');
