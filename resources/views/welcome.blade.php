@@ -85,6 +85,7 @@
             <span class="input-group-text" id="basic-addon1">Salario</span>
             <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario"  min="350" aria-label="Username" aria-describedby="basic-addon1">
         </div>
+
         <div class="btn-group" role="group" aria-label="Basic example">
           <input class="btn btn-success" type="submit" name="Enviar">
         </div>
@@ -112,14 +113,34 @@
         </div>
       </div>
     </div>
-    <div class="form-outline mb-4">
+
+
+<!--     <div class="form-outline mb-4">
       <label class="form-label" for="form6Example6">Edad</label>
       <input type="number" id="form6Example6" class="form-control-sm" name="edad" min="1" max="100" value="{{ $persona->edad }}" />
     </div>
+
+
     <div class="form-outline mb-4">
       <label class="form-label" for="form6Example6">Salario</label>
       <input type="number" id="form6Example6" class="form-control-sm" min="350" name="salario" value="{{ $persona->salario }}" />
+    </div> -->
+
+
+
+
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Edad</span>
+      <input type="number" class="form-control" id="form6Example6" name="edad" placeholder="Digite su edad" min="15" max="100" aria-label="Username" aria-describedby="basic-addon1" value="{{ $persona->edad }}">
     </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Salario</span>
+      <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario"  min="350" aria-label="Username" aria-describedby="basic-addon1" value="{{ $persona->salario }}" >
+    </div>
+
+
     <div class="btn-group" role="group" aria-label="Basic example">
       <input class="btn btn-success" type="submit" name="Modificar">
     </div>
