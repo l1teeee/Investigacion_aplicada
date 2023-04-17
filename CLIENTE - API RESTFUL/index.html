@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <title>CLIENTES DE LA API</title>
+</head>
+<body style="background-color: #E9E5DD;">
+    <div style="background-color: #E9E5DD;" id="app">
+        <v-app>
+            <v-main style="background-color: #E9E5DD;">
+                <v-card class="mx-auto mt-5" color="transparent" max-width="1280" elevation="0">
+                    <v-btn class="mx-2" fab dark color="#D04925" @click="formNuevo()"><v-icon>mdi-plus</v-icon></v-btn>
+                    <h2>Control de personas</h2>
+                    <v-simple-table class="mt-5">
+                        <template v-slot:default>
+                            <thead>
+                                <tr style="background-color: #d43d14;" class="text-center">
+                                    <th class="white--text text-center">ID</th>
+                                    <th class="white--text text-center">Nombre</th>
+                                    <th class="white--text text-center">Apellidos</th>
+                                    <th class="white--text text-center">Edad</th>
+                                    <th class="white--text text-center">Salario</th>
+                                    <th class="white--text text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="persona in personas" :key="persona.id">
+                                    <td>{{ persona.id }}</td>
+                                    <td>{{ persona.nombres }}</td>
+                                    <td>{{ persona.apellidos }}</td>
+                                    <td>{{ persona.edad }}</td>
+                                    <td>{{ persona.salario }}</td>
+
+                                    <td>
+                                        <v-btn style="background-color: #992E24;" dark small fab @click="formEditar(persona.id,persona.nombres,persona.apellidos,persona.edad,persona.salario)"><v-icon>mdi-pencil</v-icon></v-btn>
+                                        <v-btn style="background-color: #696464;" dark small fab @click="borrar(persona.id)"><v-icon>mdi-delete</v-icon></v-btn>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </template>
+                    </v-simple-table>
+                </v-card>
+                <!-- COMPONENTE DE DIALOGO -->
+                <v-dialog v-model="dialog" max-width="600">
+                    <v-card>
+                        <v-card-title>PERSONA</v-card-title>
+                        <v-card-text>
+                            <v-form>
+                                <v-container>
+                                    <v-row>
+                                        <input v-model="persona.id" hidden></input>
+                                        <v-col cols="12" md="4">
+                                            <v-text-field v-model="persona.nombres" label="Nombres" type="text" solo required>{{persona.nombres}}</v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" md="4">
+                                            <v-text-field v-model="persona.apellidos" label="Apellidos" type="text" solo required>{{persona.apellidos}}</v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" md="4">
+                                            <v-text-field v-model="persona.edad" label="Edad" type="number" solo required>{{persona.edad}}</v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" md="4">
+                                            <v-text-field v-model="persona.salario" label="Salario" type="number" prefix="$" solo required>{{persona.salario}}</v-text-field>
+                                        </v-col>
+                                    </v-row>
+                                </v-container>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn @click="dialog=false" color="#696464" dark>CANCELAR</v-btn>
+                            <v-btn @click="guardar()" type="submit" color="#992E24" dark>GUARDAR</v-btn>
+                        </v-card-actions>
+                        </v-form>
+                    </v-card>
+                </v-dialog>
+            </v-main>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js" integrity="sha512-nqIFZC8560+CqHgXKez61MI0f9XSTKLkm0zFVm/99Wt0jSTZ7yeeYwbzyl0SGn/s8Mulbdw+ScCG41hmO2+FKw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+        let url="http://127.0.0.1:8000/api/personas/";
+        new Vue({
+            el:"#app",
+            vuetify: new Vuetify(),
+            data(){
+                return{
+                    personas: [],
+                    dialog: false,
+                    operacion: '',
+                    persona:{
+                        id:null,
+                        nombres:'',
+                        apellidos:'',
+                        edad:'',
+                        salario:''
+                    }
+                }
+                
+            },
+            created(){
+                this.mostrar()
+            },
+            methods:{
+                mostrar:function(){
+                    axios.get(url).then(response=>{
+                        this.personas=response.data;
+                    });
+                },
+                crear:function(){
+                    let parametros= {nombres:this.persona.nombres, apellidos:this.persona.apellidos, edad:this.persona.edad, salario:this.persona.salario}
+                    axios.post(url, parametros).then(response=>{
+                        this.mostrar();
+                    });
+                    this.persona.nombres='';
+                    this.persona.apellidos='';
+                    this.persona.edad='';
+                    this.persona.salario='';
+                },
+                editar:function(){
+                    let parametros= {nombres:this.persona.nombres, apellidos:this.persona.apellidos, edad:this.persona.edad, salario:this.persona.salario, id:this.persona.id}
+                    axios.put(url+this.persona.id, parametros).then(response=>{
+                        this.mostrar();
+                    });
+                },
+                borrar:function(id){
+                    Swal.fire({
+                        title:'¿Desea eliminar?',
+                        confirmButtonText: 'Confirmar',
+                        showCancelButton:true
+                    }).then((result)=>{
+                        if(result.isConfirmed){
+                            axios.delete(url+id).then(response=>{
+                                this.mostrar();
+                            });
+                            Swal.fire('Eliminado','','success');
+                        } else if(result.isDenied){
+
+                        }
+                    });
+                },
+
+                //BOTONES GUARDAR Y FORMULARIO
+
+                guardar:function(){
+                    if(this.operacion == 'crear'){
+                        this.crear();
+                    } else if(this.operacion=='editar'){
+                        this.editar();
+                    }
+                    this.dialog=false;
+                },
+
+                formNuevo:function(){
+                    this.dialog = true;
+                    this.operacion='crear';
+                    this.persona.nombres ='';
+                    this.persona.apellidos='';
+                    this.persona.edad='';
+                    this.persona.salario='';
+                },
+
+                formEditar:function(id, nombres, apellidos, edad, salario){
+                    this.persona.id = id;
+                    this.persona.nombres = nombres;
+                    this.persona.apellidos = apellidos;
+                    this.persona.edad = edad;
+                    this.persona.salario = salario;
+                    this.dialog = true;
+                    this.operacion = 'editar';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
