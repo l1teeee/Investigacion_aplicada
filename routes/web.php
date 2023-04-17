@@ -36,6 +36,8 @@ Route::get('/', [App\Http\Controllers\PersonaController::class, 'persona']);
 
 Route::delete('/personas/{id}', [App\Http\Controllers\PersonaController::class, 'destroy'])->name('personas.destroy');
 
+Route::put('/personas/{id}', [App\Http\Controllers\PersonaController::class, 'update'])->name('personas.update');
+
 Route::resource('persona', PersonaController::class);
 
 
