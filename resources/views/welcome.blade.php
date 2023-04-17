@@ -118,6 +118,8 @@
     </div>
     <div class="btn-group" role="group" aria-label="Basic example">
       <input class="btn btn-success" type="submit" name="Enviar">
+      <a></a>
+      <button type="button" class="btn btn-danger" onclick="cerrarDialogo()">Cancelar</button>
     </div>
   </form>
 </dialog>
@@ -205,6 +207,10 @@ function abrirDialogo() {
   
   // Abre el cuadro de diálogo
   dialog.showModal();
+}
+
+function cerrarDialogo() {
+  document.getElementById('favDialog').close();
 }
 </script>
 
