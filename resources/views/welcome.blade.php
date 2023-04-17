@@ -36,8 +36,8 @@
         <td>{{ $persona->id }}</td>
         <td>{{ $persona->nombres }}</td>
         <td>{{ $persona->apellidos }}</td>
-        <td>{{ $persona->edad }}</td>
-        <td>{{ $persona->salario }}</td>
+        <td>{{ $persona->edad }} años</td>
+        <td>${{ $persona->salario }}</td>
         <td>
             <button type="button" class="btn btn-secondary" id="showModifi_{{ $persona->id }}">Modificar</button>
             <form action="{{ route('personas.destroy', $persona->id) }}" method="POST" class="d-inline-block">
