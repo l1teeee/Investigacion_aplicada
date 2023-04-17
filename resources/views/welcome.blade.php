@@ -24,7 +24,11 @@
       <link rel="stylesheet" href="{{asset('css/app.css') }}">
       <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.min.css">  
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
       <title>Manager</title>
 
@@ -46,12 +50,16 @@
     </tr>
   	</thead>
   	<tbody>
-    <tr>
-      <td>1</td>
-      <td>Julián</td>
-      <td>Mendez</td>
-      <td>56</td>
-      <td>1056</td>
+    <tr v-for="persona in personas" :key="personas.id">
+      <td>{{personas.id}}</td>
+      <td>{{personas.nombres}}</td>
+      <td>{{personas.apellidos}}</td>
+      <td>{{personas.edad}}</td>
+      <td>{{personas.salario}}</td>
+
+
+
+
       <td><button type="button" class="btn btn-secondary" id="showModifi">Modificar</button>
       <button type="button" class="btn btn-danger"  id="showElimi">Eliminar</button></td>
 
