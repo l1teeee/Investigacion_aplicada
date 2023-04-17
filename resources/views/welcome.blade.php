@@ -390,7 +390,7 @@ confirmBtn2.addEventListener('click', (event) => {
 
 
   <<script>
-    let url = 'http://localhost:3000/api/personas';
+    let url = 'http://localhost:3000/api/personas/';
     new Vue({
       el: '#app',
       vuetify: new Vuetify(),
