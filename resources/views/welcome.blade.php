@@ -78,12 +78,12 @@
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Edad</span>
-            <input type="number" class="form-control" id="form6Example6" name="edad" placeholder="Digite su edad" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="number" class="form-control" id="form6Example6" name="edad" placeholder="Digite su edad" min="15" max="100" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Salario</span>
-            <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario"  min="350" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="btn-group" role="group" aria-label="Basic example">
           <input class="btn btn-success" type="submit" name="Enviar">
