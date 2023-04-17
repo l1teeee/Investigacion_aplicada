@@ -9,7 +9,7 @@
       <title>Control de usuarios</title>
 
     </head>
-    <body style="background-color: #fff;">
+    <body style="background-color: #DAF5FF;">
     <nav class="navbar navbar-dark bg-dark">
     <div class="container">
     <a class="navbar-brand" href="#">Investigación Aplicada</a>
