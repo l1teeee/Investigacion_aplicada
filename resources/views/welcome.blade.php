@@ -61,32 +61,33 @@
           <div class="col">
             <div class="form-outline">
               <label class="form-label" for="form6Example1">Nombre</label>
-              <input type="text" id="form6Example1" class="form-control" name="nombres"/>
+              <input type="text" id="form6Example1" class="form-control" name="nombres" placeholder="Digite su Nombre" required/>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
               <label class="form-label" for="form6Example2">Apellido</label>
-              <input type="text" id="form6Example2" class="form-control" name="apellidos"/>
+              <input type="text" id="form6Example2" class="form-control" name="apellidos" placeholder="Digite su Apellido" required/>
             </div>
           </div>
         </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form6Example6 ">Edad</label>
-          <input type="number" id="form6Example6" class="form-control-sm" name="edad"/>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Edad</span>
+            <input type="number" class="form-control" id="form6Example6" name="edad" placeholder="Digite su edad" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form6Example6">Salario</label>
-          <input type="number" id="form6Example6" class="form-control-sm" name="salario"/>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Salario</span>
+            <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-
         <div class="btn-group" role="group" aria-label="Basic example">
           <input class="btn btn-success" type="submit" name="Enviar">
         </div>
       </center>
     </form>
 </center>
+
 
 
 <dialog id="favEliminar">
@@ -103,64 +104,6 @@
 </center>
 
 
-<script>
-const showButton = document.getElementById('showDialog');
-const showButton1 = document.getElementById('showModifi');
-const showButton2 = document.getElementById('showElimi');
-
-const favDialog = document.getElementById('favDialog');
-const favModi = document.getElementById('favModi');
-const favEliminar = document.getElementById('favEliminar');
-
-const outputBox = document.querySelector('output');
-const selectEl = favDialog.querySelector('select');
-const selectEl1 = favModi.querySelector('select');
-const selectEl2 = favEliminar.querySelector('select');
-
-const confirmBtn = favDialog.querySelector('#confirmBtn');
-const confirmBtn1 = favModi.querySelector('#confirmBtn1');
-const confirmBtn2 = favEliminar.querySelector('#confirmBtn2');
-
-showButton.addEventListener('click', () => {
-    favDialog.showModal();
-});
-
-showButton1.addEventListener('click', () => {
-    favModi.showModal();
-});
-
-showButton2.addEventListener('click', () => {
-    favEliminar.showModal();
-});
-
-
-selectEl.addEventListener('change', (e) => {
-  confirmBtn.value = selectEl.value;
-});
-
-selectEl1.addEventListener('change', (e) => {
-  confirmBtn1.value = selectEl.value;
-});
-
-selectEl2.addEventListener('change', (e) => {
-  confirmBtn2.value = selectEl.value;
-});
-
-
-confirmBtn.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    favDialog.close();
-});
-
-confirmBtn1.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    favDialog.close();
-});
-
-confirmBtn2.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    favDialog.close();
-});
 </script>
 
   </body>
