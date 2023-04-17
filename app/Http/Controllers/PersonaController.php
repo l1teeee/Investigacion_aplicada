@@ -17,9 +17,16 @@ class PersonaController extends Controller
         //
         $personas = persona::all();
         return $personas;
-        // return view('welcome', ['personas' => $personas]);
 
     }
+
+    public function persona(){
+        $personas = persona::all();
+        return view('welcome', ['personas' => $personas]);
+
+    }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -40,13 +47,15 @@ class PersonaController extends Controller
     public function store(Request $request)
     {
         //CREACION DEL REGISTRO
-        $personas = new persona();
-        $personas->nombres = $request->nombres;
-        $personas->apellidos = $request->apellidos;
-        $personas->edad = $request->edad;
-        $personas->salario = $request->salario;
+        $persona = new Persona;
+        $persona->nombres = $request->input('nombres');
+        $persona->apellidos = $request->input('apellidos');
+        $persona->edad = $request->input('edad');
+        $persona->salario = $request->input('salario');
+        $persona->save();
 
-        $personas->save();
+        return redirect('/')->with('success', 'Persona creada exitosamente');
+
     }
 
     /**

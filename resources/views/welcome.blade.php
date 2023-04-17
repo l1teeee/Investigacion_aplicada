@@ -1,23 +1,4 @@
 
-
-
-
-<!-- <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-        
-        
-    </head>
-    <body>
-        <h1>Hola</h1>
-    </body>
-</html> -->
-
-
- 
 <!DOCTYPE html>
   <html>
     <head>
@@ -55,10 +36,10 @@
         <td>{{ $persona->salario }}</td>
         <td>
             <button type="button" class="btn btn-secondary" id="showModifi_{{ $persona->id }}">Modificar</button>
-            <button type="button" class="btn btn-danger" id="showElimi_{{ $persona->id }}">Eliminar</button>
+            <button type="button" class="btn btn-danger" id="showElimi_{{ $persona->id }}" data-persona-id="{{ $persona->id }}">Eliminar</button>
         </td>
     </tr>
-@endforeach
+    @endforeach
 
   	</tbody>
 	</table>
@@ -66,52 +47,17 @@
     <button type="button" class="btn btn-success" id="showDialog">Subir dato</button>
     </div></center>
     </div>
+  
     
-    
 
 
-    <!-- A modal dialog containing a form -->
-<dialog id="favDialog">
-  <form>
-  <div class="row mb-4">
-    <center>
-    <h1>SUBIR DATO</h1>
 
-    </center>
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form6Example1" class="form-control" />
-        <label class="form-label" for="form6Example1">Nombre</label>
-      </div>
-    </div>
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
-        <label class="form-label" for="form6Example2">Apellido</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-outline mb-4">
-    <input type="number" id="form6Example6" class="form-control" />
-    <label class="form-label" for="form6Example6">Edad</label>
-  </div>
 
-  <div class="form-outline mb-4">
-    <input type="number" id="form6Example6" class="form-control" />
-    <label class="form-label" for="form6Example6">Salario</label>
-  </div>
 
-  <div class="d-grid gap-2">
-  <button id="confirmBtn" value="default" class="btn btn-outline-success">Enviar</button>
 
-    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
-  </div>    
-    <div>
-      
-    </div>
-  </form>
-</dialog>
-<!-- <output></output> -->
+
+
+
 
 
     <!-- A modal dialog containing a form -->

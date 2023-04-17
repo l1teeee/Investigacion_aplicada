@@ -22,3 +22,4 @@ Route::get('/personas', 'App\Http\Controllers\PersonaController@index');//MOSTRA
 Route::post('/personas', 'App\Http\Controllers\PersonaController@store');//CREAR REGISTROS
 Route::put('/personas/{id}', 'App\Http\Controllers\PersonaController@update');
 Route::delete('/personas/{id}', 'App\Http\Controllers\PersonaController@destroy');
+
