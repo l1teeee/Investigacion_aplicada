@@ -144,7 +144,33 @@
   </div>
 
   <div class="d-grid gap-2">
-  <button id="confirmBtn1" value="default" class="btn btn-info">Modificar</button>
+  <button id="confirmBtn1" value="default" class="btn btn-outline-success">Modificar</button>
+
+    <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
+  </div>    
+    <div>
+      
+    </div>
+  </form>
+</dialog>
+<!-- <output></output> -->
+</center>
+
+
+
+
+<!-- A modal dialog containing a form -->
+<dialog id="favEliminar">
+  <form>
+  <div class="row mb-4">
+    <center>
+    <h1>Modificar DATO</h1>
+
+    </center>
+    <h1>Estas seguro que quieres eliminar este dato?</h1>
+
+  <div class="d-grid gap-2">
+  <button id="confirmBtn1" value="default" class="btn btn-outline-success">Modificar</button>
 
     <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
   </div>    
@@ -162,9 +188,13 @@
 <script>
 const showButton = document.getElementById('showDialog');
 const showButton1 = document.getElementById('showModifi');
+const showButton2 = document.getElementById('favEliminar');
+
 
 const favDialog = document.getElementById('favDialog');
 const favModi = document.getElementById('favModi');
+const favEliminar = document.getElementById('favModi');
+
 
 const outputBox = document.querySelector('output');
 const selectEl = favDialog.querySelector('select');
