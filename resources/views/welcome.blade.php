@@ -49,20 +49,21 @@
 
     </tr>
   	</thead>
-    
   	<tbody>
-    <tr v-for="persona in personas" :key="persona.id">
-    <td>{{persona.id}}</td>
-    <td>{{persona.nombres}}</td>
-    <td>{{persona.apellidos}}</td>
-    <td>{{persona.edad}}</td>
-    <td>{{persona.salario}}</td>
-    
+
+
+    <tr v-for="personas in persona" :key="personas.id">
+    <td>{{personas.id}}</td>
+    <td>{{personas.nombres}}</td>
+    <td>{{personas.apellidos}}</td>
+    <td>{{personas.edad}}</td>
+    <td>{{personas.salario}}</td>
     <td>
     <button type="button" class="btn btn-secondary" id="showModifi">Modificar</button>
     <button type="button" class="btn btn-danger"  id="showElimi">Eliminar</button>
     </td>
     </tr> 
+
   	</tbody>
 	</table>
     <center><div class="btn-group" role="group" aria-label="Basic example">
@@ -70,10 +71,13 @@
     </div></center>
     </div>
     
-
     
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js" integrity="sha512-nqIFZC8560+CqHgXKez61MI0f9XSTKLkm0zFVm/99Wt0jSTZ7yeeYwbzyl0SGn/s8Mulbdw+ScCG41hmO2+FKw==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.all.min.js"></script>
+
 
     <!-- A modal dialog containing a form -->
 <dialog id="favDialog">
@@ -385,6 +389,102 @@ confirmBtn2.addEventListener('click', (event) => {
 
 
 
+  <<script>
+    let url = 'http://localhost:3000/api/personas';
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+       data() {
+        return {            
+            articulos: [],
+            dialog: false,
+            operacion: '',            
+            articulo:{
+                id: null,
+                descripcion:'',
+                precio:'',
+                stock:''
+            }          
+        }
+       },
+       created(){               
+            this.mostrar()
+       },  
+       methods:{          
+            //MÉTODOS PARA EL CRUD
+            mostrar:function(){
+              axios.get(url)
+              .then(response =>{
+                this.articulos = response.data;                   
+              })
+            },
+            crear:function(){
+                let parametros = {descripcion:this.articulo.descripcion, precio:this.articulo.precio,stock:this.articulo.stock };                
+                axios.post(url, parametros)
+                .then(response =>{
+                  this.mostrar();
+                });     
+                this.articulo.descripcion="";
+                this.articulo.precio="";
+                this.articulo.stock="";
+            },                        
+            editar: function(){
+            let parametros = {descripcion:this.articulo.descripcion, precio:this.articulo.precio, stock:this.articulo.stock, id:this.articulo.id};                            
+            //console.log(parametros);                   
+                 axios.put(url+this.articulo.id, parametros)                            
+                  .then(response => {                                
+                     this.mostrar();
+                  })                
+                  .catch(error => {
+                      console.log(error);            
+                  });
+            },
+            borrar:function(id){
+             Swal.fire({
+                title: '¿Confirma eliminar el registro?',   
+                confirmButtonText: `Confirmar`,                  
+                showCancelButton: true,                          
+              }).then((result) => {                
+                if (result.isConfirmed) {      
+                      //procedimiento borrar
+                      axios.delete(url+id)
+                      .then(response =>{           
+                          this.mostrar();
+                       });      
+                      Swal.fire('¡Eliminado!', '', 'success')
+                } else if (result.isDenied) {                  
+                }
+              });              
+            },
+
+            //Botones y formularios
+            guardar:function(){
+              if(this.operacion=='crear'){
+                this.crear();                
+              }
+              if(this.operacion=='editar'){ 
+                this.editar();                           
+              }
+              this.dialog=false;                        
+            }, 
+            formNuevo:function () {
+              this.dialog=true;
+              this.operacion='crear';
+              this.articulo.descripcion='';                           
+              this.articulo.precio='';
+              this.articulo.stock='';
+            },
+            formEditar:function(id, descripcion, precio, stock){              
+              this.articulo.id = id;
+              this.articulo.descripcion = descripcion;                            
+              this.articulo.precio = precio;
+              this.articulo.stock = stock;                      
+              this.dialog=true;                            
+              this.operacion='editar';
+            }
+       }      
+    });
+  </script>
 
   </body>
 </html>
