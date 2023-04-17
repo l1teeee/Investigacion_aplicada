@@ -49,21 +49,20 @@
 
     </tr>
   	</thead>
+    
   	<tbody>
-    <tr v-for="persona in personas" :key="personas.id">
-      <td>{{personas.id}}</td>
-      <td>{{personas.nombres}}</td>
-      <td>{{personas.apellidos}}</td>
-      <td>{{personas.edad}}</td>
-      <td>{{personas.salario}}</td>
-
-
-
-
-      <td><button type="button" class="btn btn-secondary" id="showModifi">Modificar</button>
-      <button type="button" class="btn btn-danger"  id="showElimi">Eliminar</button></td>
-
-    </tr>
+    <tr v-for="persona in personas" :key="persona.id">
+    <td>{{persona.id}}</td>
+    <td>{{persona.nombres}}</td>
+    <td>{{persona.apellidos}}</td>
+    <td>{{persona.edad}}</td>
+    <td>{{persona.salario}}</td>
+    
+    <td>
+    <button type="button" class="btn btn-secondary" id="showModifi">Modificar</button>
+    <button type="button" class="btn btn-danger"  id="showElimi">Eliminar</button>
+    </td>
+    </tr> 
   	</tbody>
 	</table>
     <center><div class="btn-group" role="group" aria-label="Basic example">
