@@ -50,10 +50,13 @@
     </tr>
     @endforeach
   	</tbody>
+    
 	</table>
+  <button type="button" class="btn btn-primary" onclick="abrirAgregar()">Agregar Usuario</button>
 
   <BR><BR>
-    <form action="{{url('/persona')}}" method="POST">
+  <dialog id="agreDialog">
+  <form action="{{url('/persona')}}" method="POST">
       @csrf
       <div class="row mb-4" >
         <center>
@@ -87,6 +90,7 @@
         </div>
       </center>
     </form>
+  </dialog>
 </center>
 
 <dialog id="favDialog">
@@ -145,9 +149,17 @@
 function abrirDialogo() {
   // Obtiene el elemento del cuadro de diálogo
   var dialog = document.getElementById('favDialog');
+
   
   // Abre el cuadro de diálogo
   dialog.showModal();
+
+}
+
+function abrirAgregar(){
+  var agregar = document.getElementById('agreDialog');
+  agregar.showModal();
+
 }
 </script>
 
