@@ -52,7 +52,7 @@
   	</tbody>
     
 	</table>
-  <button type="button" class="btn btn-primary" onclick="abrirAgregar()">Agregar Usuario</button>
+  <button type="button" class="btn btn-success" onclick="abrirAgregar()">Agregar Usuario</button>
 
   <BR><BR>
   <dialog id="agreDialog">
@@ -86,7 +86,7 @@
             <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <input class="btn btn-success" type="submit" name="Enviar">
+          <input class="btn btn-success" type="submit" name="Enviar Datos">
         </div>
       </center>
     </form>
@@ -121,7 +121,7 @@
       <input type="number" id="form6Example6" class="form-control-sm" name="salario" value="{{ $persona->salario }}" />
     </div>
     <div class="btn-group" role="group" aria-label="Basic example">
-      <input class="btn btn-success" type="submit" name="Enviar">
+      <input class="btn btn-success" type="submit" name="Modificar Usuario">
     </div>
   </form>
 </dialog>
