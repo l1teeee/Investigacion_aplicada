@@ -10,7 +10,7 @@ body{
 .muestras{
     padding: 1vw;
     margin: 10vw 3vw 1vw 3vw;
-    background: #FEFBF6;
+    background: rgba( 254, 250, 224, 0.7 );
 box-shadow: 0 8px 32px 0 rgba(44, 46, 73, 0.37);
 backdrop-filter: blur( 20px );
 -webkit-backdrop-filter: blur( 20px );
