@@ -86,7 +86,7 @@
             <input type="number" class="form-control" id="form6Example6" name="salario" placeholder="Digite su salario" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <input class="btn btn-success" type="submit" name="Enviar Datos">
+          <input class="btn btn-success" type="submit" name="Enviar">
         </div>
       </center>
     </form>
@@ -94,7 +94,7 @@
 </center>
 
 <dialog id="favDialog">
-  <form action="{{ route('personas.update', $persona->id) }}" method="POST">
+  <form action="{{ route('personas.update', $persona->id) }}" method="POST" >
     @csrf
     @method('PUT')
     <div class="row mb-4">
@@ -114,14 +114,14 @@
     </div>
     <div class="form-outline mb-4">
       <label class="form-label" for="form6Example6">Edad</label>
-      <input type="number" id="form6Example6" class="form-control-sm" name="edad" value="{{ $persona->edad }}" />
+      <input type="number" id="form6Example6" class="form-control-sm" name="edad" min="1" max="100" value="{{ $persona->edad }}" />
     </div>
     <div class="form-outline mb-4">
       <label class="form-label" for="form6Example6">Salario</label>
-      <input type="number" id="form6Example6" class="form-control-sm" name="salario" value="{{ $persona->salario }}" />
+      <input type="number" id="form6Example6" class="form-control-sm" min="350" name="salario" value="{{ $persona->salario }}" />
     </div>
     <div class="btn-group" role="group" aria-label="Basic example">
-      <input class="btn btn-success" type="submit" name="Modificar Usuario">
+      <input class="btn btn-success" type="submit" name="Modificar">
     </div>
   </form>
 </dialog>
@@ -161,6 +161,8 @@ function abrirAgregar(){
   agregar.showModal();
 
 }
+
+
 </script>
 
 
