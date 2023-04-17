@@ -30,7 +30,7 @@ margin: 3vw 3vw 5vw 3vw;
 }
 
 
-#favDialog,#favModi{
+#favDialog,#favModi,#favEliminar{
     background: rgba( 255, 255, 255, 0.8 );
 box-shadow: 0 8px 32px 0 rgba(155, 158, 194, 0.637);
 backdrop-filter: blur( 4px );

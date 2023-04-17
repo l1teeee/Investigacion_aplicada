@@ -53,7 +53,7 @@
       <td>56</td>
       <td>1056</td>
       <td><button type="button" class="btn btn-secondary" id="showModifi">Modificar</button>
-      <button type="button" class="btn btn-danger">Eliminar</button></td>
+      <button type="button" class="btn btn-danger"  id="showElimi">Eliminar</button></td>
 
     </tr>
   	</tbody>
@@ -167,10 +167,12 @@
     <h1>Modificar DATO</h1>
 
     </center>
-    <h1>Estas seguro que quieres eliminar este dato?</h1>
+    <center>    <h5>Estas seguro que quieres eliminar este dato?</h1>
+    <br>
+</center>
 
   <div class="d-grid gap-2">
-  <button id="confirmBtn1" value="default" class="btn btn-outline-success">Modificar</button>
+  <button id="confirmBtn2" value="default" class="btn btn-outline-success">Eliminar</button>
 
     <button value="cancel" formmethod="dialog" class="btn btn-outline-danger">Cancel</button>
   </div>    
@@ -188,20 +190,24 @@
 <script>
 const showButton = document.getElementById('showDialog');
 const showButton1 = document.getElementById('showModifi');
-const showButton2 = document.getElementById('favEliminar');
+const showButton2 = document.getElementById('showElimi');
 
 
 const favDialog = document.getElementById('favDialog');
 const favModi = document.getElementById('favModi');
-const favEliminar = document.getElementById('favModi');
+const favEliminar = document.getElementById('favEliminar');
 
 
 const outputBox = document.querySelector('output');
 const selectEl = favDialog.querySelector('select');
 const selectEl1 = favModi.querySelector('select');
+const selectEl2 = favEliminar.querySelector('select');
+
 
 const confirmBtn = favDialog.querySelector('#confirmBtn');
 const confirmBtn1 = favModi.querySelector('#confirmBtn1');
+const confirmBtn2 = favEliminar.querySelector('#confirmBtn2');
+
 
 
 showButton.addEventListener('click', () => {
@@ -210,6 +216,10 @@ showButton.addEventListener('click', () => {
 
 showButton1.addEventListener('click', () => {
     favModi.showModal();
+});
+
+showButton2.addEventListener('click', () => {
+    favEliminar.showModal();
 });
 
 
@@ -221,12 +231,22 @@ selectEl1.addEventListener('change', (e) => {
   confirmBtn1.value = selectEl.value;
 });
 
+selectEl2.addEventListener('change', (e) => {
+  confirmBtn2.value = selectEl.value;
+});
+
+
 confirmBtn.addEventListener('click', (event) => {
     event.preventDefault(); 
     favDialog.close();
 });
 
 confirmBtn1.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    favDialog.close();
+});
+
+confirmBtn2.addEventListener('click', (event) => {
     event.preventDefault(); 
     favDialog.close();
 });
